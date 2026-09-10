@@ -1,0 +1,365 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+
+    background: #f7f8fc;
+
+    color: #171717;
+}
+
+
+/* ================================
+   CABEÇALHO
+================================ */
+
+.page-title {
+    margin: 0 0 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+
+    color: #625bf6;
+}
+
+.page-subtitle {
+    margin: 0 0 30px;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    color: #7a7d89;
+
+    text-align: center;
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.card {
+    width: 320px;
+    height: 210px;
+
+    perspective: 1000px;
+}
+
+
+/* ================================
+   PARTE QUE GIRA
+================================ */
+
+.card-inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    transform-style: preserve-3d;
+
+    transition: transform 1s ease;
+
+    border-radius: 22px;
+}
+
+
+/* ================================
+   FLIP
+   Movimento original preservado
+================================ */
+
+.card:hover .card-inner {
+    transform: rotateY(180deg) rotate(5deg);
+}
+
+
+/* ================================
+   FRENTE / VERSO
+================================ */
+
+.card-front,
+.card-back {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    transform-style: preserve-3d;
+}
+
+
+/* ================================
+   FRENTE
+================================ */
+
+.card-front {
+    z-index: 2;
+
+    background: #ffffff;
+
+    border: 1px solid #e8e9ef;
+
+    box-shadow:
+        0 12px 30px rgba(39, 42, 61, 0.08),
+        0 2px 6px rgba(39, 42, 61, 0.04);
+}
+
+
+/* Pequeno detalhe visual */
+
+.card-front::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #625bf6,
+        #8b5cf6
+    );
+}
+
+
+/* ================================
+   VERSO
+================================ */
+
+.card-back {
+    z-index: 1;
+
+    transform: rotateY(180deg);
+
+    background: linear-gradient(
+        135deg,
+        #625bf6 0%,
+        #7547e8 100%
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 12px 30px rgba(98, 91, 246, 0.18);
+}
+
+
+/* Brilho discreto no verso */
+
+.card-back::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -100px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.card-back::after {
+    content: "";
+
+    position: absolute;
+
+    width: 140px;
+    height: 140px;
+
+    bottom: -90px;
+    left: -60px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* ================================
+   TEXTO
+================================ */
+
+.card-front span,
+.card-back span {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 100%;
+
+    font-size: 28px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    overflow-wrap: break-word;
+}
+
+
+/* Inglês */
+
+.card-front span {
+    color: #18191f;
+}
+
+.card-front span::before {
+    /* content: "ENGLISH"; */
+
+    display: block;
+
+    margin-bottom: 14px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    color: #625bf6;
+}
+
+
+/* Português */
+
+.card-back span {
+    color: #ffffff;
+}
+
+.card-back span::before {
+    /* content: "PT-BR"; */
+
+    display: block;
+
+    margin-bottom: 14px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* ================================
+   BOTÃO
+================================ */
+
+form {
+    margin: 30px 0 0;
+}
+
+input[type="submit"] {
+    appearance: none;
+
+    min-width: 150px;
+
+    padding: 13px 25px;
+
+    border: 1px solid #e2e3e9;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #30313a;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(39, 42, 61, 0.06);
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background: #625bf6;
+
+    color: #ffffff;
+
+    border-color: #625bf6;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(98, 91, 246, 0.18);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 30px 15px;
+    }
+
+    .card {
+        width: min(320px, 90vw);
+        height: 210px;
+    }
+
+    .card-front span,
+    .card-back span {
+        font-size: 25px;
+    }
+
+    .page-subtitle {
+        font-size: 13px;
+    }
+}

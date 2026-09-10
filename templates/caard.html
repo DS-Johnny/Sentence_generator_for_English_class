@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Class Card</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="card-inner">
+
+            <div class="card-front">
+                <span>{{frase_pt}}</span>
+            </div>
+
+            <div class="card-back">
+                <span>{{frase_en}}</span>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <form action="{{ url_for('index') }}" method="POST">
+        <input type="submit" value="Regenerate">
+    </form>
+
+</body>
+</html>
