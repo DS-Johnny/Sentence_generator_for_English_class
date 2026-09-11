@@ -1,0 +1,62 @@
+{
+  "Brasil": {
+    "article": "o",
+    "preposition": "do",
+    "english": "Brazil"
+  },
+  "Japão": {
+    "article": "o",
+    "preposition": "do",
+    "english": "Japan"
+  },
+  "Canadá": {
+    "article": "o",
+    "preposition": "do",
+    "english": "Canada"
+  },
+  "México": {
+    "article": "o",
+    "preposition": "do",
+    "english": "Mexico"
+  },
+  "Portugal": {
+    "article": null,
+    "preposition": "de",
+    "english": "Portugal"
+  },
+  "França": {
+    "article": "a",
+    "preposition": "da",
+    "english": "France"
+  },
+  "Alemanha": {
+    "article": "a",
+    "preposition": "da",
+    "english": "Germany"
+  },
+  "Itália": {
+    "article": "a",
+    "preposition": "da",
+    "english": "Italy"
+  },
+  "Argentina": {
+    "article": "a",
+    "preposition": "da",
+    "english": "Argentina"
+  },
+  "Espanha": {
+    "article": "a",
+    "preposition": "da",
+    "english": "Spain"
+  },
+  "Estados Unidos": {
+    "article": "os",
+    "preposition": "dos",
+    "english": "the United States"
+  },
+  "Filipinas": {
+    "article": "as",
+    "preposition": "das",
+    "english": "the Philippines"
+  }
+}

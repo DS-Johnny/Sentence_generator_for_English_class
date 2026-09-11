@@ -9,27 +9,31 @@ class A1A_sentence_generator():
     
     with open("conjugation.json", "r", encoding="utf-8") as f:
         conjugation = json.load(f)
+    
+    with open("countries.json", "r", encoding="utf-8") as f:
+        countries = json.load(f)
 
     def origem(self):
         tipo = choice(['afirmativa', 'interrogativa', 'negativa'])
-        country = fake.country()
+        country = choice([key for key in self.countries.keys()])
 
         sujeito = choice([key for key in self.conjugation['ser'].keys()])
         verb = self.conjugation['ser'][sujeito]
         sujeito_en = self.conjugation['pronouns'][sujeito]
         verb_en = self.conjugation['to_be'][sujeito_en]
+        country_en = self.countries[country]['english']
         
         if tipo == 'afirmativa':
-            frase_en = f'{sujeito_en.capitalize()} {verb_en} from {country}'
-            return tipo, f'{sujeito.capitalize()} {verb} do {country}', frase_en
+            frase_en = f'{sujeito_en.capitalize()} {verb_en} from {country_en}'
+            return tipo, f'{sujeito.capitalize()} {verb} {self.countries[country]['preposition']} {country}', frase_en
     
         elif tipo == 'negativa':
-            frase_en = f'{sujeito_en.capitalize()} {verb_en} not from {country}'
-            return tipo, f'{sujeito.capitalize()} não {verb} do {country}', frase_en
+            frase_en = f'{sujeito_en.capitalize()} {verb_en} not from {country_en}'
+            return tipo, f'{sujeito.capitalize()} não {verb} {self.countries[country]['preposition']} {country}', frase_en
     
         else:
-            frase_en = f'{verb_en.capitalize()} {sujeito_en} from {country}?'
-            return tipo, f'{sujeito.capitalize()} {verb} do {country}?', frase_en
+            frase_en = f'{verb_en.capitalize()} {sujeito_en} from {country_en}?'
+            return tipo, f'{sujeito.capitalize()} {verb} {self.countries[country]['preposition']} {country}?', frase_en
 
     def nome(self):
         tipo = choice(['afirmativa', 'interrogativa', 'negativa'])
@@ -90,7 +94,7 @@ class A1A_sentence_generator():
 
     def idade(self):
         tipo = choice(['afirmativa', 'interrogativa', 'negativa'])
-        idade = randint(1,110)
+        idade = randint(2,110)
 
         sujeito = choice([key for key in self.conjugation['ter'].keys()])
         verbo = self.conjugation['ter'][sujeito]

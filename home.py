@@ -9,25 +9,22 @@ st.set_page_config(
     layout="centered"
 )
 
-# ================================
-# CSS
-# ================================
+# ================================ CSS
 with open('style.txt', 'r', encoding='utf-8') as f:
     estilo = f.read()
 
-st.markdown(estilo, unsafe_allow_html=True)
+st.markdown(estilo, unsafe_allow_html=True) # CARREGA CSS
 
 
-# ================================
-# FRASES
-# ================================
+# ================================ SIDEBAR
+st.sidebar.title("SENTENCE GENERATOR")
+
+
+# ================================ FRASES
 
 tipo, frase_pt, frase_en = generator.gerar_frases()
 
-
-# ================================
-# HEADER
-# ================================
+# ================================ HEADER
 
 st.markdown("""
 <div class="page-title">
@@ -35,14 +32,11 @@ st.markdown("""
 </div>
 
 <div class="page-subtitle">
-    Passe o mouse sobre o cartão para revelar a tradução
+    Hover over the card to reveal the translation
 </div>
 """, unsafe_allow_html=True)
 
-
-# ================================
-# CARD
-# ================================
+# ================================ CARD
 
 st.html(f"""
 <div class="card">
@@ -62,11 +56,8 @@ st.html(f"""
 </div>
 """)
 
-
-# ================================
-# BOTÃO
-# ================================
-col1, col2, col3, col4, col5 = st.columns(5)
+# ================================ BOTÃO
+col1, col2, col3, col4, col5 = st.columns(5) # Gambiarra para centralizar o botão
 
 with col3:
     if st.button("Regenerate"):
