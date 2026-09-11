@@ -1,108 +1,48 @@
 from faker import Faker
 from random import choice, randint
+import json
 fake = Faker()
 
 class A1A_sentence_generator():
     def __init__(self):
         pass
-
-    verbo_ser = {
-        'eu' : 'sou',
-        'você' : 'é',
-        'ele' : 'é',
-        'ela' : 'é',
-        'nós' : 'somos',
-        'vocês' : 'são',
-        'eles' : 'são',
-        'elas' : 'são'
-    }
-
-    verbo_ter = {
-                'eu' : 'tenho',
-                'você' : 'tem',
-                'ele' : 'tem',
-                'ela' : 'tem',
-                'nós' : 'temos',
-                'vocês' : 'tem',
-                'eles' : 'tem',
-                'elas' : 'tem'
-            }
-
-    verb_to_be = {
-        'I' : 'am',
-        'you': 'are',
-        'he' : 'is',
-        'she' : 'is',
-        'we' : 'are',
-        'they' : 'are'
-    }
-    pronouns = {
-        'eu' : 'I',
-        'você' : 'you',
-        'ele' : 'he',
-        'ela' : 'she',
-        'nós' : 'we',
-        'vocês' : 'you',
-        'eles' : 'they',
-        'elas' : 'they'
-    }
-    possessivos = {
-            'meu nome' : 'é',
-            'seu nome' : 'é',
-            'o nome dele' : 'é',
-            'o nome dela' : 'é',
-            'nossos nomes' : 'são',
-            'seus nomes' : 'são',
-            'os nomes deles' : 'são'
-        }
-
-    possessives = {
-            'meu nome' : 'my name',
-            'seu nome' : 'your name',
-            'o nome dele' : 'his name',
-            'o nome dela' : 'her name',
-            'nossos nomes' : 'our names',
-            'seus nomes' : 'your names',
-            'os nomes deles' : 'their names'
-        }
-
-    possessives_to_be = {
-        'my name' : 'is',
-        'your name' : 'is',
-        'his name' : 'is',
-        'her name' : 'is',
-        'our names' : 'are',
-        'your names' : 'are',
-        'their names' : 'are'
-     }
+    
+    with open("conjugation.json", "r", encoding="utf-8") as f:
+        conjugation = json.load(f)
 
     def origem(self):
-        sujeito = choice([key for key in self.verbo_ser.keys()])
         tipo = choice(['afirmativa', 'interrogativa', 'negativa'])
-        sujeito_en = self.pronouns[sujeito]
         country = fake.country()
+
+        sujeito = choice([key for key in self.conjugation['ser'].keys()])
+        verb = self.conjugation['ser'][sujeito]
+        sujeito_en = self.conjugation['pronouns'][sujeito]
+        verb_en = self.conjugation['to_be'][sujeito_en]
+        
         if tipo == 'afirmativa':
-            frase_en = f'{sujeito_en.capitalize()} {self.verb_to_be[sujeito_en]} from {country}'
-            return tipo, f'{sujeito.capitalize()} {self.verbo_ser[sujeito]} do {country}', frase_en
+            frase_en = f'{sujeito_en.capitalize()} {verb_en} from {country}'
+            return tipo, f'{sujeito.capitalize()} {verb} do {country}', frase_en
     
         elif tipo == 'negativa':
-            frase_en = f'{sujeito_en.capitalize()} {self.verb_to_be[sujeito_en]} not from {country}'
-            return tipo, f'{sujeito.capitalize()} não {self.verbo_ser[sujeito]} do {country}', frase_en
+            frase_en = f'{sujeito_en.capitalize()} {verb_en} not from {country}'
+            return tipo, f'{sujeito.capitalize()} não {verb} do {country}', frase_en
     
         else:
-            frase_en = f'{self.verb_to_be[sujeito_en].capitalize()} {sujeito_en} from {country}?'
-            return tipo, f'{sujeito.capitalize()} {self.verbo_ser[sujeito]} do {country}?', frase_en
+            frase_en = f'{verb_en.capitalize()} {sujeito_en} from {country}?'
+            return tipo, f'{sujeito.capitalize()} {verb} do {country}?', frase_en
 
     def nome(self):
-        sujeito = choice([key for key in self.possessivos.keys()])
-        verb = self.possessivos[sujeito]
         tipo = choice(['afirmativa', 'interrogativa', 'negativa'])
-        sujeito_en = self.possessives[sujeito]
-        verb_en = self.possessives_to_be[sujeito_en]
         name_1 = fake.first_name()
         name_2 = fake.first_name()
         name_m = fake.first_name_male()
         name_f= fake.first_name_female()
+
+        sujeito = choice([key for key in self.conjugation['possessivos'].keys()])
+        verb = self.conjugation['possessivos'][sujeito]
+        sujeito_en = self.conjugation['possessives'][sujeito]
+        verb_en = self.conjugation['possessives_to_be'][sujeito_en]
+        
         if tipo == 'afirmativa':
             if verb == 'são':
                 frase_en = f'{sujeito_en.capitalize()} {verb_en} {name_1} and {name_2}'
@@ -149,12 +89,15 @@ class A1A_sentence_generator():
                     return tipo, f'{sujeito.capitalize()} {verb} {name_1}?', frase_en
 
     def idade(self):
-        sujeito = choice([key for key in self.verbo_ter.keys()])
-        verbo = self.verbo_ter[sujeito]
-        idade = randint(1,110)
         tipo = choice(['afirmativa', 'interrogativa', 'negativa'])
-        sujeito_en = self.pronouns[sujeito]
-        verbo_en = self.verb_to_be[sujeito_en]
+        idade = randint(1,110)
+
+        sujeito = choice([key for key in self.conjugation['ter'].keys()])
+        verbo = self.conjugation['ter'][sujeito]
+        sujeito_en = self.conjugation['pronouns'][sujeito]
+        verbo_en = self.conjugation['to_be'][sujeito_en]
+
+
         if tipo == 'afirmativa':
             frase_en = f'{sujeito_en.capitalize()} {verbo_en} {idade} years old.'
             return tipo, f'{sujeito.capitalize()} {verbo} {idade} anos.', frase_en

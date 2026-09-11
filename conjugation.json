@@ -1,0 +1,67 @@
+{
+  "ser": {
+    "eu": "sou",
+    "você": "é",
+    "ele": "é",
+    "ela": "é",
+    "nós": "somos",
+    "vocês": "são",
+    "eles": "são",
+    "elas": "são"
+  },
+  "ter": {
+    "eu": "tenho",
+    "você": "tem",
+    "ele": "tem",
+    "ela": "tem",
+    "nós": "temos",
+    "vocês": "tem",
+    "eles": "tem",
+    "elas": "tem"
+  },
+  "to_be": {
+    "I": "am",
+    "you": "are",
+    "he": "is",
+    "she": "is",
+    "we": "are",
+    "they": "are"
+  },
+  "pronouns": {
+    "eu": "I",
+    "você": "you",
+    "ele": "he",
+    "ela": "she",
+    "nós": "we",
+    "vocês": "you",
+    "eles": "they",
+    "elas": "they"
+  },
+  "possessivos": {
+    "meu nome": "é",
+    "seu nome": "é",
+    "o nome dele": "é",
+    "o nome dela": "é",
+    "nossos nomes": "são",
+    "seus nomes": "são",
+    "os nomes deles": "são"
+  },
+  "possessives": {
+    "meu nome": "my name",
+    "seu nome": "your name",
+    "o nome dele": "his name",
+    "o nome dela": "her name",
+    "nossos nomes": "our names",
+    "seus nomes": "your names",
+    "os nomes deles": "their names"
+  },
+  "possessives_to_be": {
+    "my name": "is",
+    "your name": "is",
+    "his name": "is",
+    "her name": "is",
+    "our names": "are",
+    "your names": "are",
+    "their names": "are"
+  }
+}
