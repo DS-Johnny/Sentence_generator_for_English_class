@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+  }
+  .chart {
+    position: relative;
+    width: 680px;
+    height: 220px;
+    margin: 0 auto;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+  .slot {
+    position: absolute;
+    top: 88px;
+    width: 50px;
+    height: 34px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 34px;
+    border-bottom: 3px solid #000;
+  }
+  .label {
+    position: absolute;
+    font-size: 16px;
+    text-align: center;
+    width: 90px;
+    margin-left: -45px;
+  }
+  .connector {
+    position: absolute;
+    width: 1px;
+    background: #000;
+  }
+
+  /* posições dos 9 slots (esquerda -> direita) */
+  #pos1 { left: 60px;  }
+  #pos2 { left: 122px; }
+  #pos3 { left: 184px; }
+  #pos4 { left: 258px; }
+  #pos5 { left: 320px; }
+  #pos6 { left: 382px; }
+  #pos7 { left: 456px; }
+  #pos8 { left: 518px; }
+  #pos9 { left: 580px; }
+
+  /* conectores e rótulos "Hundred" (abaixo do 1º slot de cada grupo) */
+  .connector-down { top: 122px; height: 38px; }
+  #conn-h1 { left: 84px;  }
+  #conn-h2 { left: 282px; }
+  #conn-h3 { left: 480px; }
+  .label-hundred { top: 165px; }
+  #lbl-h1 { left: 84px;  }
+  #lbl-h2 { left: 282px; }
+  #lbl-h3 { left: 480px; }
+
+  /* conectores e rótulos "Million" / "Thousand" (entre os grupos) */
+  .connector-up { top: 82px; height: 40px; }
+  #conn-m { left: 246px; }
+  #conn-t { left: 444px; }
+  .label-top { top: 45px; }
+  #lbl-m { left: 246px; }
+  #lbl-t { left: 444px; }
+</style>
+</head>
+<body>
+
+<div class="chart">
+
+  <!-- rótulos superiores -->
+  <div class="connector connector-up" id="conn-m"></div>
+  <div class="label label-top" id="lbl-m">Million</div>
+
+  <div class="connector connector-up" id="conn-t"></div>
+  <div class="label label-top" id="lbl-t">Thousand</div>
+
+  <!-- 9 posições de dígitos -->
+  <div class="slot" id="pos1">$POS1</div>
+  <div class="slot" id="pos2">$POS2</div>
+  <div class="slot" id="pos3">$POS3</div>
+  <div class="slot" id="pos4">$POS4</div>
+  <div class="slot" id="pos5">$POS5</div>
+  <div class="slot" id="pos6">$POS6</div>
+  <div class="slot" id="pos7">$POS7</div>
+  <div class="slot" id="pos8">$POS8</div>
+  <div class="slot" id="pos9">$POS9</div>
+
+  <!-- rótulos inferiores -->
+  <div class="connector connector-down" id="conn-h1"></div>
+  <div class="label label-hundred" id="lbl-h1">Hundred</div>
+
+  <div class="connector connector-down" id="conn-h2"></div>
+  <div class="label label-hundred" id="lbl-h2">Hundred</div>
+
+  <div class="connector connector-down" id="conn-h3"></div>
+  <div class="label label-hundred" id="lbl-h3">Hundred</div>
+
+</div>
+
+</body>
+</html>
