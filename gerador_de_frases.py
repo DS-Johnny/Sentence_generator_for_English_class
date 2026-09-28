@@ -7,10 +7,10 @@ class A1A_sentence_generator():
     def __init__(self):
         pass
     
-    with open("conjugation.json", "r", encoding="utf-8") as f:
+    with open("data/conjugation.json", "r", encoding="utf-8") as f:
         conjugation = json.load(f)
     
-    with open("countries.json", "r", encoding="utf-8") as f:
+    with open("data/countries.json", "r", encoding="utf-8") as f:
         countries = json.load(f)
 
     def origem(self):
