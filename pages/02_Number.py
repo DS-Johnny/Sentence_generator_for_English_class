@@ -11,7 +11,7 @@ exercise, content = st.tabs(['Exercise', 'Content'])
 
 with exercise:
     # ================================ CSS
-    with open('style_place_value.txt', 'r', encoding='utf-8') as f:
+    with open('./styles/style_place_value.txt', 'r', encoding='utf-8') as f:
         estilo = f.read()
 
     st.markdown(estilo, unsafe_allow_html=True)  # CARREGA CSS

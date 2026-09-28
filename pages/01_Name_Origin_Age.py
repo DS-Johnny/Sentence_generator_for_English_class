@@ -13,7 +13,7 @@ exercicio, conteudo = st.tabs(['Exercise', 'Content'])
 with exercicio:
 
     # ================================ CSS
-    with open('style.txt', 'r', encoding='utf-8') as f:
+    with open('./styles/style.txt', 'r', encoding='utf-8') as f:
         estilo = f.read()
 
     st.markdown(estilo, unsafe_allow_html=True) # CARREGA CSS
