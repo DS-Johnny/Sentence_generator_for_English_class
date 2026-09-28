@@ -1,4 +1,3 @@
 __pycache__/
 env/
-gerador_de_frases_backup.py
-teste.py
+dict_comprehention.ipynb

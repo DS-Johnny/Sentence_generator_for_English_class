@@ -25,8 +25,7 @@ with exercise:
     
     else:
         num_raw = randint(1000,999999999)
-    # ================================ NÚMERO
-    # numero = "4728"  # vindo do seu gerador aleatório (3 a 9 dígitos)
+
 
     numero = str(num_raw)
     digitos = list(numero)
