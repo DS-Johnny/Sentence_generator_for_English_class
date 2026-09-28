@@ -1,0 +1,83 @@
+{
+  "hospital": {
+    "artigo": "um",
+    "plural": "hospitais",
+    "en": {
+      "translation": "hospital",
+      "article": "a",
+      "plural": "hospitals"
+    }
+  },
+  "aeroporto": {
+    "artigo": "um",
+    "plural": "hospitais",
+    "en": {
+      "translation": "airport",
+      "article": "an",
+      "plural": "airports"
+    }
+  },
+  "padaria": {
+    "artigo": "uma",
+    "plural": "padarias",
+    "en": {
+      "translation": "bakery",
+      "article": "a",
+      "plural": "bakeries"
+    }
+  },
+  "delegacia": {
+    "artigo": "uma",
+    "plural": "delegacias",
+    "en": {
+      "translation": "police station",
+      "article": "a",
+      "plural": "police stations"
+    }
+  },
+  "supermercado": {
+    "artigo": "um",
+    "plural": "supermercados",
+    "en": {
+      "translation": "supermarket",
+      "article": "a",
+      "plural": "supermarkets"
+    }
+  },
+  "restaurante": {
+    "artigo": "um",
+    "plural": "restaurantes",
+    "en": {
+      "translation": "restaurant",
+      "article": "a",
+      "plural": "restaurants"
+    }
+  },
+  "pista de skate": {
+    "artigo": "uma",
+    "plural": "pistas de skate",
+    "en": {
+      "translation": "skatepark",
+      "article": "a",
+      "plural": "bakeries"
+    }
+  },
+  "universidade": {
+    "artigo": "uma",
+    "plural": "universidades",
+    "en": {
+      "translation": "university",
+      "article": "a",
+      "plural": "universities"
+    }
+  },
+  "banco": {
+    "artigo": "um",
+    "plural": "bancos",
+    "en": {
+      "translation": "bank",
+      "article": "a",
+      "plural": "banks"
+    }
+  }
+}

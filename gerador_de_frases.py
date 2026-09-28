@@ -122,6 +122,78 @@ class A1A_sentence_generator():
         }
 
         return topics[choice([key for key in topics.keys()])]()
+    
+class There_to_be_city_generator():
+    def __init__(self):
+        pass
+    def gerar_there_tobe_singular(self):
+        with open('data/areas.json', 'r', encoding='utf-8') as f:
+            areas = json.load(f)
+
+        with open('data/places.json', 'r', encoding='utf-8') as f:
+            places = json.load(f)
+
+        possessives = {
+            "Fem" : {
+                "minha" : "my",
+                "sua" : "your",
+                "dele" : "his",
+                "dela" : "her",
+                "nossa" : "our",
+                "deles" : "their",
+                "delas" : "their"
+            },
+            "Masc" : {
+                "meu" : "my",
+                "seu" : "your",
+                "dele" : "his",
+                "dela" : "her",
+                "nosso" : "our",
+                "deles" : "their",
+                "delas" : "their"
+            }
+        }
+
+        
+        place = choice([i for i in places])
+        article = places[place]['artigo']
+        place_en = places[place]['en']['translation']
+        article_en = places[place]['en']['article']
+
+        random_area = choice([i for i in areas.keys()])
+        area = areas[random_area]
+        art_prep = area['art/prep']
+        art_prep_en = area['en']['article']
+        area_en = area['en']['translation']
+        gender = area['gender']
+        possessive_pt = choice([i for i in possessives[gender].keys()])
+        possessive_en = possessives[gender][possessive_pt]
+                    
+
+        forms = ["q", "a", "n"]
+        form = choice(forms)
+        if form == "a":
+            if possessive_pt in ['meu', 'seu', 'nosso', 'minha', 'sua', 'nossa']:
+                pt = f'Tem {article} {place} {art_prep} {possessive_pt} {random_area}.'
+                
+            else:
+                pt = f'Tem {article} {place} {art_prep} {random_area} {possessive_pt}.'
+            en = f'There is {article_en} {place_en} {art_prep_en} {possessive_en} {area_en}.'
+        elif form == "q":
+            if possessive_pt in ['meu', 'seu', 'nosso', 'minha', 'sua', 'nossa']:
+                pt = f'Tem {article} {place} {art_prep} {possessive_pt} {random_area}? '
+            else:
+                pt = f'Tem {article} {place} {art_prep} {random_area} {possessive_pt}? '
+            en = f'Is there {article_en} {place_en} {art_prep_en} {possessive_en} {area_en}?'
+        else:
+            if possessive_pt in ['meu', 'seu', 'nosso', 'minha', 'sua', 'nossa']:
+                pt = f'Não tem {article} {place} {art_prep} {possessive_pt} {random_area}.'
+            else:
+                pt = f'Não tem {article} {place} {art_prep} {random_area} {possessive_pt}.'
+            en = f'There is not {article_en} {place_en} {art_prep_en} {possessive_en} {area_en}.'
+
+        return pt, en
+
 if "__main__" == __name__:
     gerador = A1A_sentence_generator()
     for i in range(27):

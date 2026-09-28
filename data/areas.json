@@ -1,0 +1,50 @@
+{
+  "cidade": {
+    "gender": "Fem",
+    "art/prep": "na",
+    "en": {
+      "translation": "city",
+      "article": "in"
+    }
+  },
+  "bairro": {
+    "gender": "Masc",
+    "art/prep": "no",
+    "en": {
+      "translation": "neighborhood",
+      "article": "in"
+    }
+  },
+  "rua": {
+    "gender": "Fem",
+    "art/prep": "na",
+    "en": {
+      "translation": "street",
+      "article": "in"
+    }
+  },
+  "área": {
+    "gender": "Fem",
+    "art/prep": "na",
+    "en": {
+      "translation": "area",
+      "article": "in"
+    }
+  },
+  "região": {
+    "gender": "Fem",
+    "art/prep": "na",
+    "en": {
+      "translation": "region",
+      "article": "in"
+    }
+  },
+  "país": {
+    "gender": "Masc",
+    "art/prep": "no",
+    "en": {
+      "translation": "country",
+      "article": "in"
+    }
+  }
+}
