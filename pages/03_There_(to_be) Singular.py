@@ -1,5 +1,7 @@
 import streamlit as st
 from gerador_de_frases import There_to_be_city_generator
+import pandas as pd
+import json
 
 generator = There_to_be_city_generator()
 
@@ -67,5 +69,35 @@ with exercicio:
             st.rerun()
 
 with conteudo:
-    pass
+    with open('data/areas.json', 'r', encoding='utf-8') as f:
+        areas = json.load(f)
+        
+    with open('data/places.json', 'r', encoding='utf-8') as f:
+        places = json.load(f)
 
+    dados_areas = {
+        "Portuguese" : [],
+        "English" : []
+    }
+
+    for k,v in areas.items():
+        dados_areas['Portuguese'].append(k)
+        dados_areas['English'].append(v['en']['translation'])
+
+    dados_places = {
+        "Portuguese" : [],
+        "English" : [],
+        "Article" : []
+    }
+
+    for k,v in places.items():
+        dados_places['Portuguese'].append(k)
+        dados_places['English'].append(v['en']['translation'])
+        dados_places['Article'].append(v['en']['article'])
+        
+    col1, col2 = st.columns(2)
+    with col1:
+        st.dataframe(pd.DataFrame(dados_areas))
+    with col2:
+        st.dataframe(pd.DataFrame(dados_places))
+        
