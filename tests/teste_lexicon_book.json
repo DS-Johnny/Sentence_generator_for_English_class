@@ -1,0 +1,117 @@
+{
+  "lemma": "book",
+  "language": "en",
+  "entries": [
+    {
+      "pos": "noun",
+      "senses": [
+        {
+          "id": 101,
+          "definition": "A written work",
+          "translations": [
+            {
+              "lemma": "livro",
+              "language": "pt",
+              "pos": "noun",
+              "forms": [
+                {
+                  "form": "livro",
+                  "features": {
+                    "number": "singular"
+                  }
+                },
+                {
+                  "form": "livros",
+                  "features": {
+                    "number": "plural"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "forms": [
+        {
+          "form": "book",
+          "features": {
+            "number": "singular"
+          }
+        },
+        {
+          "form": "books",
+          "features": {
+            "number": "plural"
+          }
+        }
+      ]
+    },
+    {
+      "pos": "verb",
+      "senses": [
+        {
+          "id": 102,
+          "definition": "To reserve something",
+          "translations": [
+            {
+              "lemma": "reservar",
+              "language": "pt",
+              "pos": "verb",
+              "forms": [
+                {
+                  "form": "reservar",
+                  "features": {
+                    "verb_form": "infinitive"
+                  }
+                },
+                {
+                  "form": "reservo",
+                  "features": {
+                    "tense": "present",
+                    "person": 1,
+                    "number": "singular"
+                  }
+                },
+                {
+                  "form": "reservei",
+                  "features": {
+                    "tense": "past",
+                    "person": 1,
+                    "number": "singular"
+                  }
+                }
+              ]
+            },
+            {
+              "lemma": "agendar",
+              "language": "pt",
+              "pos": "verb"
+            }
+          ]
+        }
+      ],
+      "forms": [
+        {
+          "form": "book",
+          "features": {
+            "verb_form": "base"
+          }
+        },
+        {
+          "form": "books",
+          "features": {
+            "tense": "present",
+            "person": 3,
+            "number": "singular"
+          }
+        },
+        {
+          "form": "booked",
+          "features": {
+            "tense": "past"
+          }
+        }
+      ]
+    }
+  ]
+}
